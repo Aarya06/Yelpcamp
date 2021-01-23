@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+
+<div class = "container">
+	<header class = "jumbotron">
+		<div class = "container">
+			<h1 style = "text-align: center;">Welcome to YelpCamp</h1>
+			<p style = "text-align: center;">We have some of the best camp sites around NCR</p>
+			<p style = "text-align: center;"><a class="btn btn-primary btn-lg" href = "/campSites/addCamp">Add New Camp Sites</a></p>
+		</div>
+	</header>
+
+	
+
+	<div class = "row text-center">
+		<% campSites.forEach(function(campSites){ %>
+		<div class = "col-lg-3 col-sm-6">
+			<div class="thumbnail">
+				<img src = " <%= campSites.image %> "><img>
+				<div class="caption">
+					<h4> <%= campSites.name %> </h4>
+					<a href ="/campSites/<%= campSites._id %>" ><button class="btn btn-primary">View</button></a>
+				</div>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+</div>
+
+
+<%- include("../partials/footer") %>
